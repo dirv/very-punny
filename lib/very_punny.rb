@@ -8,6 +8,7 @@ class Generator
   end
 
   def generate(word)
+    raise "Unknown word" unless @rhymes.keys.include?(word)
     @rhymes[word].map do |rhyme|
       @phrases.select do |phrase|
         words = phrase.downcase.split(' ')

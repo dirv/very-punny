@@ -16,7 +16,11 @@ describe :generate do
     expect(generator.generate("skim")).to eq(["Skim reaper", "skim reaper"])
   end
 
-
+  it 'refuses bad english words' do
+    phrases =  [ "Grim reaper" , "grim reaper"]
+    generator = Generator.new(RHYMES, phrases)
+    expect{generator.generate("924blkasdgf8")}.to raise_error("Unknown word")
+  end
 
 end
 
