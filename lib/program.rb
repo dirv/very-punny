@@ -2,7 +2,7 @@ require 'very_punny'
 
 class Program
   DICTIONARY = ["skim", "jim", "grim", "goose", "slim"]
-  PHRASES =  [ "Go out on a limb", "Grim Reaper", "Fatboy Slim" ]
+  PHRASES =  [ "Go out on a limb", "Grim Reaper", "Fatboy Slim", "Carlos Slim", "Gym Class Heroes", "Grim Fandango", "Slim Jim", "Soulja Slim", "Sim City"]
 
   def initialize(input, output)
     @input = input
