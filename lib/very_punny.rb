@@ -1,15 +1,17 @@
 require 'httparty'
+require 'rhymer'
 
 class Generator
 
-  def initialize(rhymes, phrases)
-    @rhymes = rhymes
+  def initialize(dictionary, phrases)
+    @dictionary = dictionary
+    @rhymer = Rhymer.new(dictionary)
     @phrases = phrases
   end
 
   def generate(word)
-    raise "Unknown word" unless @rhymes.keys.include?(word)
-    @rhymes[word].map do |rhyme|
+    raise "Unknown word" unless @dictionary.include?(word)
+    @rhymer.find(word).map do |rhyme|
       @phrases.select do |phrase|
         words = phrase.downcase.split(' ')
         words.include?(rhyme.downcase)

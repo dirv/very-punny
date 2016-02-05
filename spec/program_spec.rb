@@ -12,7 +12,6 @@ describe :run do
     input = StringIO.new("skim\n")
     output = StringIO.new
     Program.new(input, output).run
-    expect(output.string).to include("skim reaper")
+    expect(output.string).to include("Skim Reaper")
   end
-
 end

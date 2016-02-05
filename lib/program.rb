@@ -1,8 +1,8 @@
 require 'very_punny'
 
 class Program
-  RHYMES = { "skim" => ["swim", "slim", "him", "dim", "grim", "limb", "rim", "hymn", "trim", "brim", "gym", "whim", "prim", "sim"]}
-  PHRASES =  [ "go out on a limb", "grim reaper", "fatboy slim" ]
+  DICTIONARY = ["skim", "jim", "grim", "goose", "slim"]
+  PHRASES =  [ "Go out on a limb", "Grim Reaper", "Fatboy Slim" ]
 
   def initialize(input, output)
     @input = input
@@ -13,7 +13,7 @@ class Program
     @output.print "Please enter a word: "
 
     word = @input.gets.chomp
-    puns = Generator.new(RHYMES, PHRASES).generate(word)
+    puns = Generator.new(DICTIONARY, PHRASES).generate(word)
     puns.each do |pun|
       @output.puts pun
     end
