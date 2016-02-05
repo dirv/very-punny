@@ -10,6 +10,9 @@ class Rhymer
       if rhyme[-2.. -1] == word[-2..-1] && rhyme != word
         responses << rhyme
       end
+      if rhyme[-2.. -1] == "ym" && word[-2..-1] == "im" 
+        responses << rhyme
+      end
     end
     responses
   end
